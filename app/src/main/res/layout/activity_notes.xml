@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.NotesActivity">
+
+    <EditText
+        android:id="@+id/EditTextNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:hint="@string/add_note"
+        android:importantForAutofill="no"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ButtonAddNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/_note"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:backgroundTint="#89FF00"
+        android:layout_margin="20dp"
+        android:onClick="submitNote"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/EditTextNote"
+        app:layout_constraintBottom_toTopOf="@id/RecyclerViewNote"
+        tools:ignore="UsingOnClickInXml" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewNote"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonAddNote"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:listitem="@layout/recyclerview_item"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
